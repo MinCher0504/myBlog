@@ -56,13 +56,12 @@ function Navbar() {
 
   return (
     <div className='NavbarBox'>
-      <h3>Welcome</h3>
+      <h1>Ing::</h1>
       <nav>
         <span>
           {/*  메인 페이지에 날씨와 온도 출력, 명언 한줄. */}
           <Link to='/'>Home</Link>
-          <Link to='/?'>포트폴리오</Link>
-          <Link to='/Cloth'>Cloth</Link>
+          <Link to='/cloth'>Cloth</Link>
         </span>
         {logout}
       </nav>

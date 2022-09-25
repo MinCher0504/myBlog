@@ -33,6 +33,26 @@ const userSchema = mongoose.Schema({
   },
 });
 
+const userCloth = mongoose.Schema({
+  name: {
+    type: String,
+    maxlength: 50,
+  },
+  describe: {
+    type: String,
+  },
+  cost: {
+    type: String,
+  },
+  brand: {
+    type: String,
+  },
+  image: {
+    type: String,
+    maxlength: 100,
+  },
+});
+
 // save전에 function을 함.
 userSchema.pre("save", function (next) {
   let user = this;
@@ -60,7 +80,7 @@ userSchema.pre("save", function (next) {
 
 // methods와 statics의 차이점
 // methods를 사용할 때는 이 method를 호출한 객체가 method 내에서의 this가 되고,
-// statics를 사용할 때는 이 statics를 호출한 객체에 상관없이 this가 모델 자체가 된다.
+// statics를 사용할 때는 이 statics를 호출한 객체에 상관없이 this가 모델 자체가 된다. statics = 전역
 
 userSchema.methods.comparePassword = function (planePassword, cb) {
   bcrypt.compare(planePassword, this.password, function (err, isMatch) {
@@ -83,7 +103,7 @@ userSchema.methods.generateToken = function (cb) {
 };
 
 userSchema.statics.findByToken = function (token, cb) {
-  let user = this;
+  let user = this; // this = userSchema
 
   // 토큰을 decode한다.
   jwt.verify(token, "secretToken", function (err, decoded) {
@@ -99,5 +119,6 @@ userSchema.statics.findByToken = function (token, cb) {
 
 // schema를 모델로 감싸야함
 // User = 모델
-const User = mongoose.model("User", userSchema);
-module.exports = { User };
+const User = mongoose.model("users", userSchema);
+const Cloth = mongoose.model("cloth", userCloth);
+module.exports = { User: User, Cloth: Cloth };

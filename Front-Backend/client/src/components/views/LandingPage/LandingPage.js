@@ -10,7 +10,7 @@ function LandingPage() {
   Weather();
   return (
     <>
-      <Navbar />
+      <Navbar id='Navbar' />
       <div
         style={{
           display: "flex",
@@ -21,16 +21,20 @@ function LandingPage() {
           height: "100vh",
           color: "gray",
         }}>
+        <div className='주석'>
+          <h2>Memo</h2>
+          <div>create Api 만들었음. (옷)</div>
+          <div>나머지 기능도 만들어야함.</div>
+          <div>API 완성하고 프론트 만들기.</div>
+        </div>
         <FontAwesomeIcon icon={faCode} className='codeIcon' />
         <h2>Let's Start Coding!</h2>
-        <div className='메모'>사이트 크롤링해서 옷이랑 살만한것들 정리</div>
         <div className='weatherApp'>
-          <div className='주석'>수정 나중에 ㅎㅎ.</div>
           {/* <h3 className='weather'></h3> */}
           <img src='' className='icon' alt='날씨 아이콘'></img>
-          <h3 className='description'></h3>
+          {/* <h3 className='description'></h3> */}
           <h3 className='temp'></h3>
-          <h3 className='mintemp_maxtemp'></h3>
+          {/* <h3 className='mintemp_maxtemp'></h3> */}
         </div>
       </div>
     </>

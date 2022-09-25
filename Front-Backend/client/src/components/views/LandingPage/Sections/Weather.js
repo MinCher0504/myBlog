@@ -16,20 +16,21 @@ async function getData(totalUrl) {
   const response = await fetch(totalUrl);
   response.json().then((data) => {
     console.log(data);
-    var weatherData = data.weather[0].main;
-    var descriptionData = data.weather[0].description;
+    // var weatherData = data.weather[0].main;
+    // var descriptionData = data.weather[0].description;
     var tempData = data["main"]["temp"].toFixed(1);
-    var mintempData = data["main"]["temp_min"].toFixed(1);
-    var maxtempData = data["main"]["temp_max"].toFixed(1);
+    // var mintempData = data["main"]["temp_min"].toFixed(1);
+    // var maxtempData = data["main"]["temp_max"].toFixed(1);
     var iconData = data.weather[0].icon;
 
     // document.querySelector(".weather").innerHTML = weatherData;
     document.querySelector(".icon").src =
       " http://openweathermap.org/img/wn/" + iconData + "@2x.png";
-    document.querySelector(".description").innerHTML = descriptionData;
-    document.querySelector(".temp").innerHTML = "현재 온도 : " + tempData;
-    document.querySelector(".mintemp_maxtemp").innerHTML =
-      "오늘의 관측 기온 : " + mintempData + " ~ " + maxtempData;
+    // document.querySelector(".description").innerHTML = descriptionData;
+    document.querySelector(".temp").innerHTML =
+      "현재 온도 : " + tempData + "(API 교체예정)";
+    // document.querySelector(".mintemp_maxtemp").innerHTML =
+    // "오늘의 관측 기온 : " + mintempData + " ~ " + maxtempData;
   });
 }
 

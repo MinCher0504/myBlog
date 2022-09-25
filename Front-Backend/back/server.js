@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const config = require("./config/dev");
 const auth = require("./route/auth");
 const logout = require("./route/logout");
+const cloth = require("./route/cloth");
 
 mongoose
   .connect(config.mongoUrl, {
@@ -24,7 +25,7 @@ app.use("/api/users/login", login);
 app.use("/api/users/register", register);
 app.use("/api/users/auth", auth);
 app.use("/api/users/logout", logout);
+app.use("/api/users/cloth", cloth);
 
 const port = 5000;
-
 app.listen(port, () => console.log(`listening port number ${port}`));

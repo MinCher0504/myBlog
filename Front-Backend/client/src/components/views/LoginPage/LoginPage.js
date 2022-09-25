@@ -27,6 +27,7 @@ function LoginPage() {
     };
 
     // loginUser = action
+    // redux 이용했음
     dispatch(loginUser(body)).then((response) => {
       if (response.payload.loginSuccess) {
         return navigate("/"); // Landing page로 이동
