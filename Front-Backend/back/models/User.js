@@ -34,6 +34,9 @@ const userSchema = mongoose.Schema({
 });
 
 const userCloth = mongoose.Schema({
+  product_no: {
+    type: Number,
+  },
   name: {
     type: String,
     maxlength: 50,

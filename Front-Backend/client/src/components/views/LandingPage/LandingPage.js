@@ -23,9 +23,13 @@ function LandingPage() {
         }}>
         <div className='주석'>
           <h2>Memo</h2>
-          <div>create Api 만들었음. (옷)</div>
           <div>나머지 기능도 만들어야함.</div>
           <div>API 완성하고 프론트 만들기.</div>
+          <div>
+            cloth api에서 데이터 베이스 모든 정보 불러오는 법 찾아봐야함.
+          </div>
+          <div>주소에 params 붙이는 법도 다시 찾아봐야함 까먹음(중요)</div>
+          <div>시험 공부하면서 웹공부도 제발 하자. 미래가 걱정된다.</div>
         </div>
         <FontAwesomeIcon icon={faCode} className='codeIcon' />
         <h2>Let's Start Coding!</h2>
