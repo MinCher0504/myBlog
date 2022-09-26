@@ -36,9 +36,11 @@ const userSchema = mongoose.Schema({
 const userCloth = mongoose.Schema({
   product_no: {
     type: Number,
+    required: true,
   },
   name: {
     type: String,
+    required: true,
     maxlength: 50,
   },
   describe: {
@@ -49,10 +51,15 @@ const userCloth = mongoose.Schema({
   },
   brand: {
     type: String,
+    required: true,
+    uppercase: true,
   },
   image: {
     type: String,
-    maxlength: 100,
+    required: false,
+    default:
+      "https://w.namu.la/s/5a0dfbc22d0e432def0ab164c2f53441794f55e17f00ce84ab021bea2dae11d2c0d93adbfd509f1f4fc1476d32fa854b7b3d0d58ba9d0fbad8b57f2280d6d330f99f651c90d5fdeeed1280fc0b42da076150b7078ec07b5e385dbddb65bd5315",
+    maxlength: 500,
   },
 });
 
