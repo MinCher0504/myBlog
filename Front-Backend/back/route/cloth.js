@@ -13,7 +13,7 @@ route.get("/update", (req, res) => {
   });
 });
 
-// 모든파일 불러오는 부분 찾아봐야함.
+// 모든파일 불러오는 부분
 route.get("/", (req, res) => {
   let info = [];
   Cloth.find((err, cloth) => {
@@ -22,12 +22,11 @@ route.get("/", (req, res) => {
   });
 });
 
-// 게별 상품을 보여주는 창
-route.get(`/brand=:brand&product_no=:product_no`, (req, res) => {
-  Cloth.findOne(
+// 브랜드별 상품을 보여주는 창
+route.get(`/brand=:brand`, (req, res) => {
+  Cloth.find(
     {
-      product_no: Number(req.params.product_no),
-      brand: String(req.params.brand),
+      brand: req.params.brand,
     },
     (err, userinfo) => {
       if (err || !userinfo)
@@ -35,6 +34,26 @@ route.get(`/brand=:brand&product_no=:product_no`, (req, res) => {
           success: false,
           message: "해당하는 상품이 없습니다.",
         });
+      console.log(userinfo);
+      res.status(300).json(userinfo);
+    }
+  );
+});
+
+// 게별 상품을 보여주는 창
+route.get(`/brand=:brand&product_no=:product_no`, (req, res) => {
+  Cloth.findOne(
+    {
+      product_no: req.params.product_no,
+      brand: req.params.brand,
+    },
+    (err, userinfo) => {
+      if (err || !userinfo)
+        return res.json({
+          success: false,
+          message: "해당하는 상품이 없습니다.",
+        });
+      console.log(userinfo);
       res.status(300).json(userinfo);
     }
   );
