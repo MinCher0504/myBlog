@@ -23,8 +23,7 @@ function LandingPage() {
         }}>
         <div className='주석'>
           <h2>Memo</h2>
-          <div>나머지 기능도 만들어야함.</div>
-          <div>API 완성하고 프론트 만들기.</div>
+          <div>cloth front 만들기</div>
         </div>
         <FontAwesomeIcon icon={faCode} className='codeIcon' />
         <h2>Let's Start Coding!</h2>
