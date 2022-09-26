@@ -14,12 +14,21 @@ route.get("/update", (req, res) => {
 });
 
 // 모든파일 불러오는 부분 찾아봐야함.
-route.get("/", (req, res) => {});
+route.get("/", (req, res) => {
+  let info = [];
+  Cloth.find((err, cloth) => {
+    console.log(cloth);
+    res.json(cloth);
+  });
+});
 
 // 게별 상품을 보여주는 창
-route.get(`/:product_no`, (req, res) => {
+route.get(`/brand=:brand&product_no=:product_no`, (req, res) => {
   Cloth.findOne(
-    { product_no: Number(req.params.product_no) },
+    {
+      product_no: Number(req.params.product_no),
+      brand: String(req.params.brand),
+    },
     (err, userinfo) => {
       if (err || !userinfo)
         return res.json({
