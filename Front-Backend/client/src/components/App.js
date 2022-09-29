@@ -2,6 +2,7 @@ import LandingPage from "./views/LandingPage/LandingPage";
 import LoginPage from "./views/LoginPage/LoginPage";
 import RegisterPage from "./views/RegisterPage/RegisterPage";
 import Page404 from "./views/Page404/Page404";
+import Cloth from "./views/Cloth/Cloth";
 import Auth from "./hoc/auth";
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import React from "react";
@@ -14,11 +15,12 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/cloth" element={<Cloth />} />
           //default page
-          <Route path='/*' element={<Page404 />} />
+          <Route path="/*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
     </>

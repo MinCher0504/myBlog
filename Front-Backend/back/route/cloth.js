@@ -6,12 +6,12 @@ const { Cloth } = require("../models/User");
 route.get("/", (req, res) => {
   let info = [];
   Cloth.find((err, cloth) => {
-    console.log(cloth);
+    console.log(`============ server response : ============ ${cloth} `);
     res.json(cloth);
   });
 });
 
-// 옷 추거
+// 옷 추가
 route.get("/create", (req, res) => {
   const cloth = new Cloth(req.body);
   cloth.save((err, userinfo) => {
