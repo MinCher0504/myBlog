@@ -1,0 +1,23 @@
+.display_content {
+  width: 450px;
+}
+
+.name_cost {
+  display: flex;
+  justify-content: space-between;
+}
+
+.display {
+  display: flex;
+  height: 100%;
+}
+
+.display > div {
+  margin: 15px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+}
